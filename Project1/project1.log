@@ -1,0 +1,134 @@
+INFO:root:[osu]
+INFO:root:university: The Ohio State University
+INFO:root:college: College of Engineering
+INFO:root:department: Department of Computer Science and Engineering
+INFO:root:class: CSE3461
+INFO:root:[server]
+INFO:root:serverhost: 10.134.215.76
+INFO:root:serverport: 5782
+INFO:root:[db]
+INFO:root:dbhost: 10.129.2.170
+INFO:root:dbport: 3232
+INFO:root:commitinterval: 60
+INFO:root:[logger]
+INFO:root:loghost: 10.1.154.241
+INFO:root:loglevel: info
+INFO:root:[topsecret.server.com]
+INFO:root:port: 50022
+INFO:root:forwardx11: no
+INFO:root:The input string is: the quick brown fox
+INFO:root:The tokenizing of input string is: THE quick brown fox
+INFO:root:The input string is: count to 5 ... 12345
+INFO:root:The tokenizing of input string is: COUNT to 5 ... 12345
+INFO:root:The input string is: 3461 is Networking Fundamentals
+INFO:root:The tokenizing of input string is: 3461 is Networking Fundamentals
+INFO:root:The input string is: Go Bucks!
+INFO:root:The tokenizing of input string is: GO Bucks!
+INFO:root:The input string is: The next string will be a quit
+INFO:root:The tokenizing of input string is: THE next string will be a quit
+INFO:root:The input string is: quit this app
+INFO:root:The tokenizing of input string is: QUIT this app
+INFO:root:Shutting down ...
+INFO:root:[osu]
+INFO:root:university: The Ohio State University
+INFO:root:college: College of Engineering
+INFO:root:department: Department of Computer Science and Engineering
+INFO:root:class: CSE3461
+INFO:root:[server]
+INFO:root:serverhost: 10.134.215.76
+INFO:root:serverport: 5782
+INFO:root:[db]
+INFO:root:dbhost: 10.129.2.170
+INFO:root:dbport: 3232
+INFO:root:commitinterval: 60
+INFO:root:[logger]
+INFO:root:loghost: 10.1.154.241
+INFO:root:loglevel: info
+INFO:root:[topsecret.server.com]
+INFO:root:port: 50022
+INFO:root:forwardx11: no
+INFO:root:The input string is: the quick brown fox
+INFO:root:The tokenizing of input string is: THE quick brown fox
+INFO:root:The input string is: 
+INFO:root:[osu]
+INFO:root:university: The Ohio State University
+INFO:root:college: College of Engineering
+INFO:root:department: Department of Computer Science and Engineering
+INFO:root:class: CSE3461
+INFO:root:[server]
+INFO:root:serverhost: 10.134.215.76
+INFO:root:serverport: 5782
+INFO:root:[db]
+INFO:root:dbhost: 10.129.2.170
+INFO:root:dbport: 3232
+INFO:root:commitinterval: 60
+INFO:root:[logger]
+INFO:root:loghost: 10.1.154.241
+INFO:root:loglevel: info
+INFO:root:[topsecret.server.com]
+INFO:root:port: 50022
+INFO:root:forwardx11: no
+INFO:root:The input string is: the quick brown fox
+INFO:root:The tokenizing of input string is: THE quick brown fox
+INFO:root:[osu]
+INFO:root:university: The Ohio State University
+INFO:root:college: College of Engineering
+INFO:root:department: Department of Computer Science and Engineering
+INFO:root:class: CSE3461
+INFO:root:[server]
+INFO:root:serverhost: 10.134.215.76
+INFO:root:serverport: 5782
+INFO:root:[db]
+INFO:root:dbhost: 10.129.2.170
+INFO:root:dbport: 3232
+INFO:root:commitinterval: 60
+INFO:root:[logger]
+INFO:root:loghost: 10.1.154.241
+INFO:root:loglevel: info
+INFO:root:[topsecret.server.com]
+INFO:root:port: 50022
+INFO:root:forwardx11: no
+INFO:root:The input string is: the quick brown fox
+INFO:root:The tokenizing of input string is: THE quick brown fox
+INFO:root:[osu]
+INFO:root:university: The Ohio State University
+INFO:root:college: College of Engineering
+INFO:root:department: Department of Computer Science and Engineering
+INFO:root:class: CSE3461
+INFO:root:[server]
+INFO:root:serverhost: 10.134.215.76
+INFO:root:serverport: 5782
+INFO:root:[db]
+INFO:root:dbhost: 10.129.2.170
+INFO:root:dbport: 3232
+INFO:root:commitinterval: 60
+INFO:root:[logger]
+INFO:root:loghost: 10.1.154.241
+INFO:root:loglevel: info
+INFO:root:[topsecret.server.com]
+INFO:root:port: 50022
+INFO:root:forwardx11: no
+INFO:root:[DEFAULT]
+INFO:root:[osu]
+INFO:root:university: The Ohio State University
+INFO:root:college: College of Engineering
+INFO:root:department: Department of Computer Science and Engineering
+INFO:root:class: CSE3461
+INFO:root:[server]
+INFO:root:serverhost: 10.134.215.76
+INFO:root:serverport: 5782
+INFO:root:[db]
+INFO:root:dbhost: 10.129.2.170
+INFO:root:dbport: 3232
+INFO:root:commitinterval: 60
+INFO:root:[logger]
+INFO:root:loghost: 10.1.154.241
+INFO:root:loglevel: info
+INFO:root:[topsecret.server.com]
+INFO:root:port: 50022
+INFO:root:forwardx11: no
+INFO:root:The input string is: the quick brown fox
+INFO:root:The tokenizing of input string is: THE quick brown fox
+INFO:root:The input string is: quit
+INFO:root:The tokenizing of input string is: QUIT
+INFO:root:Shutting down ...
