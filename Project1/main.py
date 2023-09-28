@@ -4,24 +4,24 @@ import configparser
 
 if __name__ == '__main__':
     # set up log file
-    logging.basicConfig(filename="project1.log", encoding="utf-8", level=logging.INFO)
+    logging.basicConfig(filename="project1.log", level=logging.INFO)
 
     # set up config file
     config = configparser.ConfigParser()
-    config.read("configuration.ini")
+    config.read("configuration.ini", encoding="utf-8")
 
+    print("The content of configuration file is:")
+    logging.info("The content of configuration file is:")
     for temp in config:
         if temp != "DEFAULT":
-            print("====================")
             print(f"[{temp}]")
             logging.info(f"[{temp}]")
 
             for child_node in config[temp]:
-                print(f"{child_node}: {config[temp][child_node]}")
-                logging.info(f"{child_node}: {config[temp][child_node]}")
-            print("====================")
+                print(f"{child_node}={config[temp][child_node]}")
+                logging.info(f"{child_node}={config[temp][child_node]}")
 
-    print("Please enter some words here: ", end="")
+    print("Please enter some words here: ")
     logging.info("Please enter some words here: ")
     for line in sys.stdin:
         line = line.strip()
@@ -29,7 +29,7 @@ if __name__ == '__main__':
             print("Warning: Can not enter empty string!!!")
             logging.info("Warning: Can not enter empty string!!!")
             print()
-            print("Please enter some words here: ", end="")
+            print("Please enter some words here: ")
             logging.info("Please enter some words here: ")
             continue
 
@@ -52,5 +52,5 @@ if __name__ == '__main__':
             break
 
         print()
-        print("Please enter some words here: ", end="")
+        print("Please enter some words here: ")
         logging.info("Please enter some words here: ")
