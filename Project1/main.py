@@ -10,6 +10,8 @@ if __name__ == '__main__':
     config = configparser.ConfigParser()
     config.read("configuration.ini", encoding="utf-8")
 
+    # print the configuration file to console
+    # write the configuration file to log file
     print("The content of configuration file is:")
     logging.info("The content of configuration file is:")
     for temp in config:
@@ -21,10 +23,15 @@ if __name__ == '__main__':
                 print(f"{child_node}={config[temp][child_node]}")
                 logging.info(f"{child_node}={config[temp][child_node]}")
 
+    # keeping ask input string from user
+    # print and record input string to console and log file
+    # tokenizing all the input string
     print("Please enter some words here: ")
     logging.info("Please enter some words here: ")
     for line in sys.stdin:
         line = line.strip()
+
+        # if the input string is empty, prompt a warning message to user
         if len(line) == 0:
             print("Warning: Can not enter empty string!!!")
             logging.info("Warning: Can not enter empty string!!!")
@@ -46,6 +53,7 @@ if __name__ == '__main__':
         print(tokenizing_str)
         logging.info(tokenizing_str)
 
+        # if the first word is "quit", then quit the program
         if tokens[0] == "QUIT":
             print("Shutting down ...")
             logging.info("Shutting down ...")
