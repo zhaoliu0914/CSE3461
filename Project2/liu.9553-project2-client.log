@@ -1,0 +1,96 @@
+INFO:root:server_host = 127.0.0.1
+INFO:root:server_port = 7721
+INFO:root:log_filename = liu.9553-project2-client.log
+INFO:root:log_level = INFO
+INFO:root:log_file_mode = a
+INFO:root:The content of configuration file is:
+INFO:root:[osu]
+INFO:root:university=The Ohio State University
+INFO:root:college=College of Engineering
+INFO:root:department=Department of Computer Science and Engineering
+INFO:root:class=CSE3461
+INFO:root:[server]
+INFO:root:serverhost=10.134.215.76
+INFO:root:serverport=5782
+INFO:root:[db]
+INFO:root:dbhost=10.129.2.170
+INFO:root:dbport=3232
+INFO:root:commitinterval=60
+INFO:root:[logger]
+INFO:root:loghost=10.1.154.241
+INFO:root:loglevel=info
+INFO:root:[topsecret.server.com]
+INFO:root:port=50022
+INFO:root:forwardx11=no
+INFO:root:[project2]
+INFO:root:serverhost=127.0.0.1
+INFO:root:serverport=7721
+INFO:root:[logging]
+INFO:root:logfile=liu.9553-project2-client.log
+INFO:root:loglevel=INFO
+INFO:root:logfilemode=a
+INFO:root:Connected to Server address: ('127.0.0.1', 7721)
+INFO:root:Please enter some words here: 
+INFO:root:The input string is: jumped over the lazy dog
+INFO:root:The tokenizing of input string is: JUMPED over the lazy dog
+INFO:root:The message send to Server is: b'{"command": "JUMPED", "parameter": "over the lazy dog"}'
+INFO:root:The message received from Server is: b'{"response": "JUMPED", "parameter": "Server received: over the lazy dog"}'
+INFO:root:Server response: JUMPED
+INFO:root:Server parameter: Server received: over the lazy dog
+INFO:root:Please enter some words here: 
+INFO:root:Warning: Can not enter empty string!!!
+INFO:root:Please enter some words here: 
+INFO:root:Warning: Can not enter empty string!!!
+INFO:root:Please enter some words here: 
+INFO:root:The input string is: call Call me Ishmael
+INFO:root:The tokenizing of input string is: CALL Call me Ishmael
+INFO:root:The message send to Server is: b'{"command": "CALL", "parameter": "Call me Ishmael"}'
+INFO:root:The message received from Server is: b'{"response": "CALL", "parameter": "Server received: Call me Ishmael"}'
+INFO:root:Server response: CALL
+INFO:root:Server parameter: Server received: Call me Ishmael
+INFO:root:Please enter some words here: 
+INFO:root:The input string is: In a hole in the ground there lived a hobbit
+INFO:root:The tokenizing of input string is: IN a hole in the ground there lived a hobbit
+INFO:root:The message send to Server is: b'{"command": "IN", "parameter": "a hole in the ground there lived a hobbit"}'
+INFO:root:The message received from Server is: b'{"response": "IN", "parameter": "Server received: a hole in the ground there lived a hobbit"}'
+INFO:root:Server response: IN
+INFO:root:Server parameter: Server received: a hole in the ground there lived a hobbit
+INFO:root:Please enter some words here: 
+INFO:root:The input string is: houston, we have a problem
+INFO:root:The tokenizing of input string is: HOUSTON, we have a problem
+INFO:root:The message send to Server is: b'{"command": "HOUSTON,", "parameter": "we have a problem"}'
+INFO:root:The message received from Server is: b'{"response": "HOUSTON,", "parameter": "Server received: we have a problem"}'
+INFO:root:Server response: HOUSTON,
+INFO:root:Server parameter: Server received: we have a problem
+INFO:root:Please enter some words here: 
+INFO:root:The input string is: it was a dark and stormy night
+INFO:root:The tokenizing of input string is: IT was a dark and stormy night
+INFO:root:The message send to Server is: b'{"command": "IT", "parameter": "was a dark and stormy night"}'
+INFO:root:The message received from Server is: b'{"response": "IT", "parameter": "Server received: was a dark and stormy night"}'
+INFO:root:Server response: IT
+INFO:root:Server parameter: Server received: was a dark and stormy night
+INFO:root:Please enter some words here: 
+INFO:root:The input string is: i want to quit
+INFO:root:The tokenizing of input string is: I want to quit
+INFO:root:The message send to Server is: b'{"command": "I", "parameter": "want to quit"}'
+INFO:root:The message received from Server is: b'{"response": "I", "parameter": "Server received: want to quit"}'
+INFO:root:Server response: I
+INFO:root:Server parameter: Server received: want to quit
+INFO:root:Please enter some words here: 
+INFO:root:The input string is: quitting
+INFO:root:The tokenizing of input string is: QUITTING
+INFO:root:The message send to Server is: b'{"command": "QUITTING", "parameter": ""}'
+INFO:root:The message received from Server is: b'{"response": "QUITTING", "parameter": ""}'
+INFO:root:Server response: QUITTING
+INFO:root:Server parameter: 
+INFO:root:The Server has shut down!!!
+INFO:root:Please enter 'quit' to exit this program!!!
+INFO:root:The input string is: sa
+INFO:root:The Server has shut down!!!
+INFO:root:Please enter 'quit' to exit this program!!!
+INFO:root:The input string is: ff
+INFO:root:The Server has shut down!!!
+INFO:root:Please enter 'quit' to exit this program!!!
+INFO:root:The input string is: quit
+INFO:root:The tokenizing of input string is: QUIT
+INFO:root:Shutting down ...
