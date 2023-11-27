@@ -6,7 +6,10 @@ import configparser
 
 is_quitting = False
 quit = "QUIT"
-quitting = "QUITTING"
+help = "HELP"
+show = "SHOW"
+valid_commands = ["ADD", "CREATE", "DELETE", "HELP", "QUIT", "REMOVE", "SHOW"]
+parameters_required = ["ADD", "CREATE", "DELETE", "REMOVE"]
 
 
 def look_up_config_file(level: str):
@@ -21,6 +24,28 @@ def look_up_config_file(level: str):
         logging_level = logging.FATAL
 
     return logging_level
+
+
+def usage():
+    print("add <list item>           - Adds an item to the current list")
+    print("create <list>             - Creates a new list")
+    print("delete <list>             - Deletes a list")
+    print("help                      - Displays a message showing all available commands")
+    print("quit                      - Gracefully shuts down both server and client applications")
+    print("remove <list item>        - Removes an item from the current list")
+    print("show                      - Displays a numbered list of the list items")
+    print("")
+
+    """
+    logging.info("add <list item>           - Adds an item to the current list")
+    logging.info("create <list>             - Creates a new list")
+    logging.info("delete <list>             - Deletes a list")
+    logging.info("help                      - Displays a message showing all available commands")
+    logging.info("quit                      - Gracefully shuts down both server and client applications")
+    logging.info("remove <list item>        - Removes an item from the current list")
+    logging.info("show                      - Displays a numbered list of the list items")
+    logging.info("")
+    """
 
 
 if __name__ == '__main__':
@@ -77,8 +102,9 @@ if __name__ == '__main__':
     # keeping ask input string from user
     # print and record input string to console and log file
     # tokenizing all the input string
-    print("Please enter some words here: ")
-    logging.info("Please enter some words here: ")
+    usage()
+    print("Please enter a valid command here: ")
+    logging.info("Please enter a valid command here: ")
     for line in sys.stdin:
         line = line.strip()
 
@@ -87,35 +113,75 @@ if __name__ == '__main__':
             print("Warning: Can not enter empty string!!!")
             logging.info("Warning: Can not enter empty string!!!")
             print()
-            print("Please enter some words here: ")
-            logging.info("Please enter some words here: ")
+            usage()
+            print("Please enter a valid command here: ")
+            logging.info("Please enter a valid command here: ")
             continue
 
-        print(f"The input string is: {line}")
-        logging.info(f"The input string is: {line}")
+        print()
+        #print(f"The input command is: {line}")
+        logging.info(f"The input command is: {line}")
 
         tokens = line.split()
         tokens[0] = tokens[0].upper()
 
-        if is_quitting and tokens[0] != quit:
-            print("The Server has shut down!!!")
-            print("Please enter 'quit' to exit this program!!!")
-            logging.info("The Server has shut down!!!")
-            logging.info("Please enter 'quit' to exit this program!!!")
+        # Checking for invalid command
+        if tokens[0] not in valid_commands:
+            print(f"Invalid command entered: {tokens[0].lower()}")
+            logging.info(f"Invalid command entered: {tokens[0].lower()}")
+            print()
+            print("usage: ")
+            logging.info("usage: ")
+            usage()
+            print("Please enter a valid command here: ")
+            logging.info("Please enter a valid command here: ")
             continue
 
-        tokenizing_str = "The tokenizing of input string is:"
-        for token in tokens:
-            tokenizing_str = tokenizing_str + " " + token
+        # Checking for missing parameters
+        if tokens[0] in parameters_required and len(tokens) == 1:
+            print(f"Missing element in command: {tokens[0].lower()}")
+            logging.info(f"Missing element in command: {tokens[0].lower()}")
+            print()
+            print("usage: ")
+            logging.info("usage: ")
+            usage()
+            print("Please enter a valid command here: ")
+            logging.info("Please enter a valid command here: ")
+            continue
 
-        print(tokenizing_str)
-        logging.info(tokenizing_str)
+        # Checking for missing parameters
+        if (tokens[0] == "CREATE" or tokens[0] == "DELETE") and len(tokens) != 2:
+            print(f"There only need one element in command: {tokens[0].lower()}")
+            logging.info(f"There only need one element in command: {tokens[0].lower()}")
+            print()
+            print("usage: ")
+            logging.info("usage: ")
+            usage()
+            print("Please enter a valid command here: ")
+            logging.info("Please enter a valid command here: ")
+            continue
+
+        # for help command
+        if tokens[0] == help:
+            print()
+            print("usage: ")
+            logging.info("usage: ")
+            usage()
+            print("Please enter a valid command here: ")
+            logging.info("Please enter a valid command here: ")
+            continue
 
         # if the first word is "quit", then quit the program
         if tokens[0] == quit:
             print("Shutting down ...")
             logging.info("Shutting down ...")
-            break
+
+        tokenizing_str = "The tokenizing of input command is:"
+        for token in tokens:
+            tokenizing_str = tokenizing_str + " " + token
+
+        #print(tokenizing_str)
+        logging.info(tokenizing_str)
 
         parameter = ""
         for token in tokens[1:len(tokens)]:
@@ -126,9 +192,11 @@ if __name__ == '__main__':
                    "parameter": parameter}
         message_json = json.dumps(message)
         message_json = message_json.encode(encoding="utf-8")
+
+        # send a request to server
         client.send(message_json)
 
-        print(f"The message send to Server is: {message_json}")
+        #print(f"The message send to Server is: {message_json}")
         logging.info(f"The message send to Server is: {message_json}")
 
         server_data = client.recv(1024)
@@ -137,22 +205,25 @@ if __name__ == '__main__':
         server_response = server_json["response"]
         server_parameter = server_json["parameter"]
 
-        print(f"The message received from Server is: {server_data}")
-        print(f"Server response: {server_response}")
-        print(f"Server parameter: {server_parameter}")
+        #print(f"The message received from Server is: {server_data}")
+        #print(f"Server response: {server_response}")
+        #print(f"Server parameter: {server_parameter}")
+        print(server_parameter)
         logging.info(f"The message received from Server is: {server_data}")
         logging.info(f"Server response: {server_response}")
         logging.info(f"Server parameter: {server_parameter}")
 
-        if server_response == quitting:
-            is_quitting = True
-            print("The Server has shut down!!!")
-            print("Please enter 'quit' to exit this program!!!")
-            logging.info("The Server has shut down!!!")
-            logging.info("Please enter 'quit' to exit this program!!!")
+        if server_response == quit:
+            #is_quitting = True
+            print("The Server has bean shut down!!!")
+            print("Bye Bye!!!")
+            logging.info("The Server has bean shut down!!!")
+            logging.info("Bye Bye!!!")
+            break
         else:
             print()
-            print("Please enter some words here: ")
-            logging.info("Please enter some words here: ")
+            logging.info("")
+            print("Please enter a valid command here: ")
+            logging.info("Please enter a valid command here: ")
 
     client.close()
